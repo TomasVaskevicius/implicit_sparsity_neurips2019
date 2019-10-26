@@ -1,0 +1,39 @@
+-------------------------------------------------------------------------------
+
+Dependencies.
+
+1) https://github.com/pytorch/pytorch
+2) https://github.com/civisanalytics/python-glmnet
+
+-------------------------------------------------------------------------------
+
+Code structure.
+
+1) ./ --- All the code related to our algorithms.
+2) ./core/ --- Our mini-framework for running simulations.
+3) ./model.py --- Implementation of our reparameterization.
+4) ./observers/hyperparameters_tuning.py --- Implementation
+        of an increasing step size scheme and initial step size tuning.
+5) ./simulation_parameters.py --- A class controlling the
+        parameters of simulation to be performed.
+6) ./running/ --- Code for running the simulations described in our paper.
+7) ./plotting/ --- Code for generating the plots after running the simulations.
+
+-------------------------------------------------------------------------------
+
+Reproducing simulations.
+
+First edit the python source code for all files in the
+./running/ directory with the device ids on which simulations
+are to be performed. Then, execute the following from the
+code directory.
+
+chmod +x run_all.sh & ./run_all.sh
+
+After the simulations have finished running, execute
+
+chmod +x plot_all.sh & ./plot_all.sh
+
+The figures will appear in the ./figures directory.
+
+-------------------------------------------------------------------------------
